@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+:root {
+  --dark-blue: #006BA6;
+  --main-blue: #0496FF;
+  --main-yellow: #FFBC42;
+  --main-ruby: #D81159;
+  --dark-ruby: #8F2D56;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: var(--dark-blue);
+  height: 100vh;
+}
+
+.container__row {
+  padding: 10px;
+  width: 80vh;
+}
+
+.container__row--header {
+  background-color: var(--main-blue);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container__row--input {
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+
+
+.container-head {
+  color: white;
+  width: 80vh;
+  padding: 10px;
+  background-color: var(--main-blue);
+}
+
+.container-item {
+  margin-bottom: 5px;
+  background-color: white;
+}
+
+.add-button {
+  color: white;
+  padding: 3px 8px;
+  border: none;
+  background-color: var(--main-blue);
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: var(--dark-blue);
 }
