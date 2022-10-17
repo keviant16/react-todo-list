@@ -6,52 +6,78 @@
   --dark-ruby: #8F2D56;
 }
 
-.container {
+.block {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--dark-blue);
   height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.container__row {
+.block__item {
   padding: 10px;
   width: 80vh;
+  border-style: outset;
 }
 
-.container__row--header {
+.block-head {
+  margin-top: 25px;
   background-color: var(--main-blue);
+}
+
+.block-head__title {
   color: white;
 }
 
-.container__row--input {
+.block-head__counter--error {
+  color: var(--main-ruby);
   background-color: white;
 }
 
-
-
-
-
-.container-head {
-  color: white;
-  width: 80vh;
-  padding: 10px;
-  background-color: var(--main-blue);
+.block-head__counter {
+  font-weight: 900;
 }
 
-.container-item {
+.block-form {
+  background-color: white;
   margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.block-form__button {
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 3px 15px;
+  border-style: outset;
+
+}
+
+.block-form__button:hover {
+  background-color: var(--main-ruby);
+}
+
+.block-form__button--add {
+  background-color: var(--main-blue);
+}
+
+.block-form__button--edit {
+  background-color: var(--main-yellow);
+}
+
+.block-form__button--delete {
+  background-color: var(--dark-ruby);
+}
+
+.block-list-group {
   background-color: white;
 }
 
-.add-button {
-  color: white;
-  padding: 3px 8px;
-  border: none;
-  background-color: var(--main-blue);
-  cursor: pointer;
-}
-
-.add-button:hover {
-  background-color: var(--dark-blue);
+.block-list-group__item {
+  padding: 10px 15px;
+  border-style: outset;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
