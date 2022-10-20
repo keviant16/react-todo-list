@@ -3,6 +3,7 @@ import {
   Button, Col, Container, Form, ListGroup, Row,
 } from 'react-bootstrap';
 import './App.css';
+import logo from './logo.svg';
 
 const STORED_TODO = JSON.parse(localStorage.getItem('TodoList'));
 
@@ -12,7 +13,6 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem('TodoList', JSON.stringify(todoList));
-    console.log(todoList);
   }, [todoList]);
 
   const handleSubmit = (e) => {
@@ -37,6 +37,9 @@ function App() {
           <span className={`block-head__counter ${todoList.length === 7 ? 'block-head__counter--error' : ''}`}>
             {`${todoList.length}/7 ${todoList.length === 7 ? 'Max capacity reached, you can no longer add a task' : ''}`}
           </span>
+        </Col>
+        <Col>
+          <img src={logo} alt="logo" className="block-head__img" />
         </Col>
       </Row>
       <Row className="block__item block-form">

@@ -24,10 +24,16 @@
 .block-head {
   margin-top: 25px;
   background-color: var(--main-blue);
+  display: flex;
+  justify-content: space-between;
 }
 
 .block-head__title {
   color: white;
+}
+
+.block-head__img {
+  margin: 11px 0px;
 }
 
 .block-head__counter--error {
