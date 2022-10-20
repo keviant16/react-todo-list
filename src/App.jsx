@@ -1,16 +1,25 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import {
-  Button,
-  Col, Container, Form, ListGroup, Row,
+  Button, Col, Container, Form, ListGroup, Row,
 } from 'react-bootstrap';
 import './App.css';
+
+const instance = axios.create({
+  baseURL: "http://localhost:8080/api/v1"
+})
 
 function App() {
   const [todoList, settodoList] = useState([]);
   const [input, setinput] = useState('');
 
+  //create or get taskUser id
+  useEffect(() => {
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (input === '') return;
     if (todoList.length + 1 === 8) return;
     settodoList((prev) => ([...prev, input]));
     setinput('');
@@ -28,7 +37,7 @@ function App() {
         <Col>
           <h1 className="block-head__title">TO DO LIST</h1>
           <span className={`block-head__counter ${todoList.length === 7 ? 'block-head__counter--error' : ''}`}>
-            {`${todoList.length}/7  ${todoList.length === 7 ? 'Max capacity reached, you can no longer add a task' : ''}`}
+            {`${todoList.length}/7 ${todoList.length === 7 ? 'Max capacity reached, you can no longer add a task' : ''}`}
           </span>
         </Col>
       </Row>
@@ -44,7 +53,12 @@ function App() {
                 onChange={(e) => setinput(e.target.value)}
               />
               {' '}
-              <Button type="submit" className="block-form__button block-form__button--add">Add</Button>
+              <Button
+                type="submit"
+                className="block-form__button block-form__button--add"
+              >
+                Add
+              </Button>
             </Form.Group>
           </Form>
         </Col>
@@ -73,5 +87,4 @@ function App() {
     </Container>
   );
 }
-
 export default App;
