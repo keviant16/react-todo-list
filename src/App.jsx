@@ -1,21 +1,19 @@
-import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Button, Col, Container, Form, ListGroup, Row,
 } from 'react-bootstrap';
 import './App.css';
 
-const instance = axios.create({
-  baseURL: "http://localhost:8080/api/v1"
-})
+const STORED_TODO = JSON.parse(localStorage.getItem('TodoList'));
 
 function App() {
-  const [todoList, settodoList] = useState([]);
+  const [todoList, settodoList] = useState(STORED_TODO || []);
   const [input, setinput] = useState('');
 
-  //create or get taskUser id
   useEffect(() => {
-  }, []);
+    localStorage.setItem('TodoList', JSON.stringify(todoList));
+    console.log(todoList);
+  }, [todoList]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
